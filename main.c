@@ -18,7 +18,7 @@ void* produce(void *arg)
 		p = (int *)malloc(sizeof(int));
 		*p = i;
 		int ret;
-		if (ret =rpush(rbuf,(void *)p) != 0)
+		if (ret =rpush(rbuf,(void *)p) != 0)  //push fail
 		{
 			i--;
 			free(p);
@@ -43,7 +43,7 @@ void *consume(void *arg)
 	for (i = 0;i < 100;i++)
 	{
 		p = rpull(rbuf,2);
-		if (p == NULL)
+		if (p == NULL)  //pull fial
 		{
 			i--;
 		}

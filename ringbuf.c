@@ -4,7 +4,9 @@
 #include <sys/time.h>
 #include <errno.h>
 
-
+/**
+ * cnt: bufsize
+ */
 RingBuf * new_ringbuf(int cnt)
 {
 	/*
@@ -43,7 +45,9 @@ void destroy_ringbuf(RingBuf *rbuf)
 	free(rbuf);
 }
 
-
+/**
+ * timeout:second
+ */
 void *rpull(RingBuf *rbuf,int timeout)
 {
 	void *element = NULL;
